@@ -1,5 +1,10 @@
 # afriroads
 
+> [!IMPORTANT]  
+> This is work-in-progres.
+>
+> December 4, 2024: Create the .Rmd, no code insofar.
+
 This project is in two parts: 
 1. Build a road network
 2. Define points in Africa
