@@ -86,5 +86,4 @@ Once the data are created using `0_data_processing`, `1_build_network` and `2_de
 
 > The project takes about 12 hours to run on a standard laptop (MacBook Pro i5 8GB 2019). 
 >
-> I haven't doublecheck if the code works on other settings. Let me know if not replicable as it is. 
-
+> 
