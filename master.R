@@ -28,5 +28,5 @@ path = "/Users/mmoglia/Dropbox/research/unil/afriroads"
 
 # Prepare the data -------------------------------------------------------------
 
-source(paste0(path,"/0_data_processing.R"))
+source(paste0(path, "/0_data_processing.R"))
 
