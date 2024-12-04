@@ -52,7 +52,7 @@ Finally, population data are from WorldPop Gridded Data.
 The project tree should looks like the following.
 
 ```
-/transafrican
+/afriroads
 |    master.R
 └─── code
    └─── 0_data_processing
