@@ -12,22 +12,17 @@
 
 rm(list=ls())
 
-path = "/Users/mmoglia/Dropbox/research/unil/afriroads"
+path_folder = "/Users/mmoglia/Dropbox/research/unil/afriroads"
+path_folder = "C:/Users/mateomoglia/Dropbox/research/unil/afriroads"
 
-pacman::p_load(igraph,rmapshaper,sf,igraph,tidyr,tidygraph,tmap,units,dplyr)
+pacman::p_load(igraph,rmapshaper,sf,igraph,tidyr,tidygraph,tmap,units,dplyr,ggplot2)
 
 # I. Open the road network -----------------------------------------------------
 
-# current_roads.shp = read_sf(paste0(path,"/temp/shapefiles/current_roads_network.shp"))
-# future_roads.shp = read_sf(paste0(path,"/temp/shapefiles/future_roads_network.shp"))
-sa.shp = read_sf(paste0(path,"/raw/afrilearnr/africountries.shp")) %>%
-  filter(name_fr == "Lesotho" | name_fr == "Afrique du Sud")
-
-current_roads.shp = read_sf(paste0(path,"/temp/shapefiles/current_sa_roads_network.shp")) %>%
-  mutate(length = as.numeric(st_length(geometry))/1000) 
-
-# future_roads.shp = read_sf(paste0(path,"/temp/shapefiles/future_sa_roads_network.shp")) %>%
-#  mutate(length = as.numeric(st_length(geometry))/1000)
+current_roads.shp = read_sf(paste0(path_folder,"/temp/shapefiles/current_roads_network.shp")) %>%
+     mutate(length = as.numeric(st_length(geometry))/1000) 
+# future_roads.shp  = read_sf(paste0(path,"/temp/shapefiles/future_roads_network.shp"))
+africountries.shp   = read_sf(paste0(path_folder,"/raw/afrilearnr/africountries.shp"))
 
 # Make the graph ---------------------------------------------------------------
 
@@ -43,7 +38,7 @@ edges = current_roads.shp %>%
   mutate(edge_id = row_number()) %>%
   ms_explode() %>%
   filter(!st_is_empty(geometry))
-  # I obtain 9413 roads in South Africa
+  # I obtain 60912 roads in SSA
 
   # 2) Extract the starting point and the ending point of each road segment
 
@@ -120,7 +115,7 @@ from_node = graph %>%
 
 to_node = graph %>%
   activate(nodes) %>%
-  filter(node_id == 2) %>%
+  filter(node_id == 2892) %>%
   pull(node_id)
 
 path = shortest_paths(graph = graph, from = from_node, to = to_node, output = "both",
