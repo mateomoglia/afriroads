@@ -1,10 +1,7 @@
-#------------------------------------------
+#-------------------------------------------------------------------------------
 #
-# This script opens the .shp for Murdock 
-# ethnic groups (Nunn, 2004). 
-# 
-# (i) Export a map
-# (ii) Compute the centroids of each group
+# This script opens the population grid cell data from WorldPop and extracts 
+# the relevant data for covered ethnic groups.
 #
 #------------------------------------------
 
@@ -12,7 +9,7 @@ pacman::p_load(ggplot2,sf,rmapshaper,sp)
 
 path = "/Users/mmoglia/Dropbox/research/unil/transafrican"
 
- # I. Open the shapefile for Murdock ethnic groups -----
+# I. Open the raster data ------------------------------------------------------
 
 ethnies.shp = read_sf(paste0(path,"/raw/ethnies/ethnies_murdock_encoded_no_island_country.shp")) %>%
   ms_simplify(keep = 0.01, keep_shapes = FALSE) # WGS84

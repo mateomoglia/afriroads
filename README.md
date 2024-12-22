@@ -57,12 +57,15 @@ The project tree should looks like the following.
 └─── code
    └─── 0_data_processing
            0_open_jedwab_storeygard.R
-           0_open_murdock_ethnic_groups.R
+           1_covered_murdock_groups.R
+           2_prepare_population_data.R
    └─── 1_build_network
            1_make_graph.R
    └─── 2_define_points
-           2_define_centroids.R
-           2_define_cities.R
+           1_geographic_centroids.R
+           2_population_centroids.R
+           3_kmean_centroids.R
+           4_external_cities.R
    └─── 3_make_output
 └─── output 
     └─── data
@@ -84,7 +87,7 @@ A `master` script is present to run the whole analysis, set the paths and the re
 
 Once the data are created using `0_data_processing`, `1_build_network` and `2_defined_points`, one can run independantly `3_make_output`.
 
-> The project takes about 12 hours to run on a standard laptop (MacBook Pro i5 8GB 2019). 
+> The project takes about 2 hours to run on my laptop (HP Elitebook 32GB). 
 >
 > I haven't doublecheck if the code works on other settings. Let me know if not replicable as it is. 
 
