@@ -83,12 +83,11 @@ The project tree should looks like the following.
            3_population_around_points.R
            4_compare_internal_distances.R
    └─── 4_compute_distance
+           0_function_shortest_path.R
            1_add_the_points.R
            2_connect_the_graph.R
-           3_compute_shortest_path.R
-           4_compute_internal_time.R
-           5_compute_bilateral_distance_matrix.R
-           6_output_visualization.R
+           3_compute_internal_time.R
+           4_compute_bilateral_distance_matrix.R
 └─── output 
     └─── data
     └─── graph
